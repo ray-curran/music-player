@@ -1,0 +1,415 @@
+@import '_mixins.scss';
+
+.merch {
+  /* FIXME: this should be re-enambled at a later date */
+  display: none !important;
+}
+
+.player {
+  /* FIXME: this should be re-enambled at a later date */
+  displayx: none !important;
+}
+
+/* Colors */
+$theme-primary: #FCE0A1;
+
+html {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  letter-spacing: 1.2px;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  background: url('../img/bg_gradient.jpg') no-repeat center center fixed;
+  background-color: #222;
+  background-size: cover;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 200;
+}
+
+.logo {
+  position: fixed;
+  color: $theme-primary;
+  top: 1em;
+  left: 1em;
+  height: 6em;
+  width: 6em;
+  @include phone {
+    top: 0;
+    left: 0;
+  }
+}
+
+.enter-site {
+  position: fixed;
+  top: 2.5em;
+  right: 3em;
+  font-size: .8em;
+  letter-spacing: 2px;
+  @include phone {
+    top: 2em;
+    right: 1.5em;
+    font-size: .8em;
+  }
+  .enter-link {
+    text-decoration: none;
+    color: $theme-primary;
+  }
+}
+
+.container {
+  background: url('../img/bust.png') no-repeat center center;
+  height: 90%;
+  width: 100%;
+  background-size: contain;
+  margin-top: 4%;
+  @include phone { 
+    margin-top: 16%;
+    height: 70%;
+  }
+  @include landscape-phone {
+    margin-top: 5%;
+  }
+  .content {
+    color: white;
+    text-align: center;
+    @include vertical-align();
+    .text-logo {
+      width: 70%;
+      margin: 0 auto;
+      display: block;
+      @include phone {
+        width: 95%;
+      }
+    }
+    .tagline {
+      font-size: 1.2em;
+      @include landscape-phone {
+        margin: 10px 0;
+      }
+    }
+    .content-links {
+      margin-top: 2em;
+      @include landscape-phone {
+        margin-top: 10px;
+      }
+    }
+    .content-button {
+      text-decoration: none;
+      border: 2px solid #bbbbbb;
+      color: white;
+      display: inline-block;
+      width: 7em;
+      font-size: .8em;
+      padding: .5em 0 .5em 0;
+      margin-left: .5em;
+
+      &:hover {
+        border-color: $theme-primary;
+        color: $theme-primary;
+	      -webkit-transition: color .3s, border-color .3s;
+	      transition: color .3s, border-color .3s;
+	      -webkit-transition-timing-function: ease;
+	      transition-timing-function: ease;
+      }
+    } 
+  }
+}
+
+.player {
+  position: fixed;
+  bottom: 1em;
+  color: $theme-primary;
+
+  @include phone {
+    width: 100%;
+    bottom: 4.5em;
+  }
+  #length {
+    float: left;
+    font-size: .9em;
+    margin-left: 10px;
+  }
+  #pButton, .rbutton {
+    border: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    outline:none;
+    cursor: pointer;
+  }
+  #pButton {
+    width: 60px;
+    height: 60px;
+    @include smaller-phone {
+      width: 45px;
+      height: 45px;
+    }
+  }
+  .rbutton {
+    height: 22px;
+    width: 22px;
+    margin-left: .5em;
+  }
+  #song-info {
+    margin-left: 1em;
+    font-size: .9em;
+    @include phone {
+      font-size: .8em;
+    }
+    @include small-phone {
+      text-align: left;
+    }
+    .song-name {
+      margin-right: 1em;
+      font-size: 16px;
+      font-weight: bold;
+      text-transform: uppercase;
+
+      @include landscape-phone {
+        display: block;
+      }
+    }
+  }
+}
+
+#audioplayer {
+  width: 100%;
+  max-width: 480px;
+  height: 60px;
+
+  @include landscape-phone {
+    max-width: 768px;
+  }
+}
+
+
+.controls {
+  width: 100%;
+  display: table;
+  > div {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  > div:last-child {
+    padding-right: 8px;
+  }
+  > .timeline-cell {
+    width: 100%;
+  }
+}
+
+.play {
+  background: url('../img/play.png');
+  width: 40px;
+  height: 40px;
+}
+.pause{background: url('../img/Pause.svg') ;}
+.heart{background: url('../img/Heart.svg') ;}
+.share{background: url('../img/Share.svg') ;}
+
+.volume{
+  background: url('../img/Sound.svg') ;
+  @include phone {
+    display: none;
+  }
+}
+
+#timeline {
+  width: 100%;
+  height: 4px;
+  background: $theme-primary;
+}
+
+#playhead{
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-top: -2px;
+  background: $theme-primary;
+}
+
+.social-icons {
+  position: fixed;
+  bottom: 1em;
+  right: 2em;
+  @include phone {
+    right: 0;
+    left: 0;
+  }
+  .icon {
+    height: 2.5em;
+    width: 2.5em;
+    color: $theme-primary;
+    display: inline-block;
+  }
+  .icon-link:not(:first-child) {
+    margin-left: .5em;
+  }
+  .mobile-center {
+    @include phone {
+      margin: 0 auto;
+      display: table;
+    }
+  }
+}
+
+.vol-wrapper {
+  position: relative;
+  .vol-controls {
+    position: absolute;
+  }
+}
+.slider {
+  position: absolute;
+  top: -110px;
+  left: 15px;
+  display: none;
+  height: 100px;
+  border: 2px solid $theme-primary;
+  background-color: #8e8d8d;
+}
+
+.tooltip {
+  position: absolute;
+  display: block;
+  top: -125px;
+  width: 35px;
+  height: 20px;
+  text-align: center;
+  border-radius: 3px;
+  border: 1px solid #333;
+}
+
+.ui-slider-handle {
+  position: absolute;
+  z-index: 2;
+  $size: 8px;
+  width: $size;
+  height: $size;
+  margin-left: -$size/2;
+  margin-top: -$size/2;
+  cursor: pointer;
+  background: $theme-primary;
+  border-radius: $size/2;
+  color: #1C94C4;
+  outline: none;
+}
+
+.center-tab {
+  @include phone {
+    width: 100%;
+    margin: 0 11% 0 11%;
+  }
+  @include small-phone {
+    width: initial;
+    margin: initial;
+  }
+}
+
+.sharePanel {
+  position: absolute;
+  height: 2em;
+  bottom: 0;
+  right: 0;
+  display: none;
+  z-index: 10;
+  .shareIcons {
+    padding: 0;
+    list-style: none;
+  }
+  .shareIcons li {
+    display: inline-block;
+  }
+  .shareIcon {
+    height: 32px;
+    width: 32px;
+  }
+  .shareIcon a {
+    background-size: 24px 24px;
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+  }
+  .facebook {
+    background: url('../img/facebook_share.png') no-repeat;
+  }
+  .twitter {
+    background: url('../img/twitter_share.png') no-repeat;
+  }
+  .googleplus {
+    background: url('../img/gplus_share.png') no-repeat;
+  }
+  .pinterest {
+    background: url('../img/pinterest_share.png') no-repeat;
+  }
+  .tumblr {
+    background: url('../img/tumblr_share.png') no-repeat;
+  }
+  .email {
+    background: url('../img/email_share.png') no-repeat;
+  }
+}
+
+/* .sharePanel.on { */
+/*   display: block; */
+/*   @include phone { */
+/*     bottom: 4.5em; */
+/*     right: 0; */
+/*     left: initial; */
+/*   } */
+/* } */
+
+.cl-effect-17 a {
+	color: white !important;
+	padding: 10px 0;
+}
+
+.cl-effect-17 a::before {
+	color: $theme-primary;
+	content: attr(data-hover);
+	position: absolute;
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+	-moz-transition: -moz-transform 0.3s, opacity 0.3s;
+	transition: transform 0.3s, opacity 0.3s;
+	pointer-events: none;
+}
+
+.cl-effect-17 a::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: -3px;
+	width: 100%;
+	height: 1px;
+	background: #fff;
+	opacity: 0;
+	-webkit-transform: translateY(5px);
+	-moz-transform: translateY(5px);
+	transform: translateY(5px);
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+	-moz-transition: -moz-transform 0.3s, opacity 0.3s;
+	transition: transform 0.3s, opacity 0.3s;
+	pointer-events: none;
+}
+
+.cl-effect-17 a:hover::before,
+.cl-effect-17 a:focus::before {
+	opacity: 0;
+	-webkit-transform: translateY(-2px);
+	-moz-transform: translateY(-2px);
+	transform: translateY(-2px);
+}
+
+.cl-effect-17 a:hover::after,
+.cl-effect-17 a:focus::after {
+	opacity: 1;
+	-webkit-transform: translateY(0px);
+	-moz-transform: translateY(0px);
+	transform: translateY(0px);
+}

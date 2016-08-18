@@ -1,0 +1,166 @@
+<!-- <!DOCTYPE html> -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,200" rel="stylesheet" type="text/css">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" type="text/css" href="css/main.css" />
+
+  <!-- JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+
+  <title>The Griswolds</title>
+</head>
+<body>  
+  <div class="logo"><img src="img/emblem.svg" alt="Griswolds Emblem Logo"></div>
+  <div class="enter-site">
+    <div class="cl-effect-17"><a class="enter-link" href="#" data-hover="ENTER SITE">ENTER SITE</a></div>
+  </div>
+  <div class="container">
+    <div class="content">
+      <img class="text-logo" src="img/textlogo.svg" alt="Griswolds Text Logo">
+      <p class="tagline">OUT OF MY HEAD</p>
+      <div class="content-links">
+        <a class="content-button" href="#">DOWNLOAD</a>
+        <a class="content-button" href="#">STREAM</a>
+        <a class="content-button merch" href="#">MERCH</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="player">
+    <div id="song-info"><span class="song-name"></span><span class="artist-name">The Griswolds</span></div>
+
+    <audio data-title="Beware The Dog" preload="true" class="track">
+      <source src="media/beware_the_dog.mp3">
+    </audio>
+    <audio data-title="Heart of a Lion" preload="true" class="track">
+      <source src="media/heart_of_a_lion.mp3">
+    </audio>
+
+    <div id="audioplayer" class="controls">
+      <div>
+        <button id="pButton" class="play" onclick="play()"></button>
+      </div>
+      <div class="timeline-cell">
+        <div id="timeline"><div id="playhead"></div></div>
+      </div>
+      <div class="length-cell">
+        <p id="length">00:00</p>
+      </div>
+      <div>
+        <div class="vol-wrapper">
+          <div class="vol-controls">
+            <span class="slider"></span>
+          </div>
+          <button class="volume rbutton"></button>
+        </div>
+      </div>
+      <div>
+        <a href="#"><button class="heart rbutton"></button></a>
+      </div>
+      <div>
+        <button class="share rbutton off"></button>
+      </div>
+      <div>
+        <div class="sharePanel">
+          <ul class="shareIcons">  
+            <li>
+              <div class="shareIcon"><a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A//soundcloud.com/thegriswolds/sets/be-impressive-debut-album-stream%3Futm_source%3Dsoundcloud%26utm_campaign%3Dshare%26utm_medium%3Dfacebook" title="Share to Facebook"></a>
+              </div>
+            </li>
+            <li>
+              <div class="shareIcon"><a class="twitter" href="https://twitter.com/share?url=https%3A//soundcloud.com/thegriswolds/sets/be-impressive-debut-album-stream%3Futm_source%3Dsoundcloud%26utm_campaign%3Dshare%26utm_medium%3Dtwitter&amp;text=Have%20you%20heard%20%E2%80%98The%20Griswolds%20Be%20Impressive%20%5BFULL%20ALBUM%20STREAM%5D%E2%80%99%20by%20%40wetheGriswolds%20on%20%23SoundCloud%3F%20%23np&amp;related=soundcloud%2CwetheGriswolds" title="Share to Twitter"></a>
+              </div>
+            </li>
+            <li>
+              <div class="shareIcon"><a class="tumblr" href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https%3A//soundcloud.com/thegriswolds/sets/be-impressive-debut-album-stream%3Futm_source%3Dsoundcloud%26utm_campaign%3Dshare%26utm_medium%3Dtumblr&posttype=audio&tags=SoundCloud%2Cmusic%2CThe%20Griswolds%2CAlternative%2CTheGriswolds%2CDebut%20Album%2CNew%20Music&caption=(%3Ca%20href%3D'https%3A//soundcloud.com/thegriswolds/sets/be-impressive-debut-album-stream%3Futm_source%3Dsoundcloud%26utm_campaign%3Dshare%26utm_medium%3Dtumblr'%3EThe%20Griswolds%3C/a%3E)" title="Share to Tumblr"></a>
+              </div>
+            </li>
+            <li>
+              <div class="shareIcon"><a class="googleplus" href="https://plus.google.com/share?url=https%3A//soundcloud.com/thegriswolds/sets/be-impressive-debut-album-stream%3Futm_source%3Dsoundcloud%26utm_campaign%3Dshare%26utm_medium%3Dgoogleplus" title="Share to Google+"></a>
+              </div>
+            </li>
+            <li>
+              <div class="shareIcon"><a class="pinterest" href="http://pinterest.com/pin/create/button/?url=https%3A//soundcloud.com/thegriswolds/sets/be-impressive-debut-album-stream%3Futm_source%3Dsoundcloud%26utm_campaign%3Dshare%26utm_medium%3Dpinterest&media=https%3A//i1.sndcdn.com/artworks-000088716372-fpl9en-t200x200.jpg&description=The%20Griswolds%20Be%20Impressive%20%5BFULL%20ALBUM%20STREAM%5D%20by%20The%20Griswolds%20on%20SoundCloud&is_video=true" title="Pin it"></a>
+              </div>
+            </li>
+            <li>
+              <div class="shareIcon"><a class="email" href="mailto:?subject=The%20Griswolds%20Be%20Impressive%20%5BFULL%20ALBUM%20STREAM%5D%20-%20SoundCloud&body=https%3A//soundcloud.com/thegriswolds/sets/be-impressive-debut-album-stream%3Futm_source%3Dsoundcloud%26utm_campaign%3Dshare%26utm_medium%3Demail" title="Share to Email"></a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!--
+    <div id="audioplayer">
+    <div class="center-tab">
+    <div>
+    <button id="pButton" class="play" onclick="play()"></button>
+    </div>
+    <div>
+    <div id="timeline"><div id="playhead"></div></div>
+    </div>
+    <div>
+    <p id="length">00:00</p>
+    </div>
+    <div>
+    <a href="#"><button class="heart rbutton"></button></a>
+    </div>
+    <div>
+    <button class="share rbutton off"></button>
+    </div>
+    <div class="sharePanel">
+    <ul class="shareIcons">  
+    <li>
+    <div class="shareIcon"><a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A//soundcloud.com/thegriswolds/sets/be-impressive-debut-album-stream%3Futm_source%3Dsoundcloud%26utm_campaign%3Dshare%26utm_medium%3Dfacebook" title="Share to Facebook"></a>
+    </div>
+    </li>
+    <li>
+    <div class="shareIcon"><a class="twitter" href="https://twitter.com/share?url=https%3A//soundcloud.com/thegriswolds/sets/be-impressive-debut-album-stream%3Futm_source%3Dsoundcloud%26utm_campaign%3Dshare%26utm_medium%3Dtwitter&amp;text=Have%20you%20heard%20%E2%80%98The%20Griswolds%20Be%20Impressive%20%5BFULL%20ALBUM%20STREAM%5D%E2%80%99%20by%20%40wetheGriswolds%20on%20%23SoundCloud%3F%20%23np&amp;related=soundcloud%2CwetheGriswolds" title="Share to Twitter"></a>
+    </div>
+    </li>
+    <li>
+    <div class="shareIcon"><a class="tumblr" href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https%3A//soundcloud.com/thegriswolds/sets/be-impressive-debut-album-stream%3Futm_source%3Dsoundcloud%26utm_campaign%3Dshare%26utm_medium%3Dtumblr&posttype=audio&tags=SoundCloud%2Cmusic%2CThe%20Griswolds%2CAlternative%2CTheGriswolds%2CDebut%20Album%2CNew%20Music&caption=(%3Ca%20href%3D'https%3A//soundcloud.com/thegriswolds/sets/be-impressive-debut-album-stream%3Futm_source%3Dsoundcloud%26utm_campaign%3Dshare%26utm_medium%3Dtumblr'%3EThe%20Griswolds%3C/a%3E)" title="Share to Tumblr"></a>
+    </div>
+    </li>
+    <li>
+    <div class="shareIcon"><a class="googleplus" href="https://plus.google.com/share?url=https%3A//soundcloud.com/thegriswolds/sets/be-impressive-debut-album-stream%3Futm_source%3Dsoundcloud%26utm_campaign%3Dshare%26utm_medium%3Dgoogleplus" title="Share to Google+"></a>
+    </div>
+    </li>
+    <li>
+    <div class="shareIcon"><a class="pinterest" href="http://pinterest.com/pin/create/button/?url=https%3A//soundcloud.com/thegriswolds/sets/be-impressive-debut-album-stream%3Futm_source%3Dsoundcloud%26utm_campaign%3Dshare%26utm_medium%3Dpinterest&media=https%3A//i1.sndcdn.com/artworks-000088716372-fpl9en-t200x200.jpg&description=The%20Griswolds%20Be%20Impressive%20%5BFULL%20ALBUM%20STREAM%5D%20by%20The%20Griswolds%20on%20SoundCloud&is_video=true" title="Pin it"></a>
+    </div>
+    </li>
+    <li>
+    <div class="shareIcon"><a class="email" href="mailto:?subject=The%20Griswolds%20Be%20Impressive%20%5BFULL%20ALBUM%20STREAM%5D%20-%20SoundCloud&body=https%3A//soundcloud.com/thegriswolds/sets/be-impressive-debut-album-stream%3Futm_source%3Dsoundcloud%26utm_campaign%3Dshare%26utm_medium%3Demail" title="Share to Email"></a>
+    </div>
+    </li>
+    </ul>
+    </div>
+    </div>
+    -->
+  </div>
+  </div>
+
+  </div>
+
+  <div class="social-icons">
+    <div class="mobile-center">
+      <a class="icon-link" href="#"><img class="icon" src="img/Soundcloud.svg" alt="Soundcloud Icon"></a>
+      <a class="icon-link" href="#"><img class="icon" src="img/Instagram.svg" alt="Instagram Icon"></a>
+      <a class="icon-link" href="#"><img class="icon" src="img/Twitter.svg" alt="Twitter Icon"></a>
+      <a class="icon-link" href="#"><img class="icon" src="img/Facebook.svg" alt="Facebook Icon"></a>
+      <a class="icon-link" href="#"><img class="icon" src="img/GooglePlus.svg" alt="GooglePlus Icon"></a>
+    </div>
+  </div>
+  <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

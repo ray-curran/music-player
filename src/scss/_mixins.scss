@@ -1,0 +1,68 @@
+/* http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/ */
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+$smallest-phone-width: 358px;
+$small-phone-width: 380px;
+$tablet-width: 775px;
+$desktop-width: 968px;
+
+
+@mixin smaller-phone {
+  @media (max-width: #{$smallest-phone-width}) {
+    @content;
+  }
+}
+
+@mixin small-phone {
+  @media (max-width: #{$small-phone-width}) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin phone-tablet {
+  @media (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media only screen and (min-width: $tablet-width) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin tablet-desktop {
+  @media only screen and (min-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin landscape-phone {
+  @media only screen and (orientation: landscape) and (max-device-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
